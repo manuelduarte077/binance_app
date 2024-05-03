@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primaryColor: AppColors.primaryColor1,
         useMaterial3: true,
-        fontFamily: "Poppins",
+        fontFamily: 'Poppins',
       ),
       home: _auth.currentUser != null ? const DashboardScreen() : StartScreen(),
     );

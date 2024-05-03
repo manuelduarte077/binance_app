@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:health_fitness/model/reminder_model.dart';
 
-
 class Switcher extends StatefulWidget {
   bool onOff;
   String uid;
   Timestamp timestamp;
   String id;
 
-  Switcher(this.onOff, this.uid, this.id, this.timestamp);
+  Switcher(this.onOff, this.uid, this.id, this.timestamp, {super.key});
 
   @override
   State<Switcher> createState() => _SwitcherState();

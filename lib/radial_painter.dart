@@ -9,12 +9,13 @@ class RadialPainter extends CustomPainter {
   final int? stepsCount;
   final double? widget;
 
-  RadialPainter(
-      {this.bgColor,
-      this.lineColor,
-      this.totalTarget,
-      this.stepsCount,
-      this.widget});
+  RadialPainter({
+    this.bgColor,
+    this.lineColor,
+    this.totalTarget,
+    this.stepsCount,
+    this.widget,
+  });
 
   @override
   void paint(Canvas canvas, Size size) {

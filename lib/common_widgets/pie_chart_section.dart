@@ -6,7 +6,11 @@ class BMIChart extends StatelessWidget {
   final double height;
   final double weight;
 
-  BMIChart({required this.height, required this.weight});
+  const BMIChart({
+    super.key,
+    required this.height,
+    required this.weight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,7 @@ class BMIChart extends StatelessWidget {
         titlePositionPercentageOffset: 0.55,
         badgeWidget: Text(
           bmi.toStringAsFixed(1),
-          style: TextStyle(
+          style: const TextStyle(
             color: AppColors.whiteColor,
             fontWeight: FontWeight.w700,
             fontSize: 12,
@@ -59,8 +63,6 @@ class BMIChart extends StatelessWidget {
   }
 
   double calculateBMI(double height, double weight) {
-    // Perform BMI calculation here
-    // Formula: BMI = weight (kg) / (height (m) * height (m))
     return weight / ((height / 100) * (height / 100));
   }
 }

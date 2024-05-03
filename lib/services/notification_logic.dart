@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:health_fitness/model/water_model.dart';
-import 'package:health_fitness/view/activity_tracker/activity_tracker_screen.dart';
 import 'package:health_fitness/view/home/home_screen.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:timezone/timezone.dart' as tz;
@@ -17,8 +16,11 @@ class NotificationLogic {
   static Future _notificationDetails() async {
     return const NotificationDetails(
       android: AndroidNotificationDetails(
-          'Water Reminder', 'Don\'t forget to drink water',
-          importance: Importance.max, priority: Priority.max),
+        'Water Reminder',
+        'Don\'t forget to drink water',
+        importance: Importance.max,
+        priority: Priority.max,
+      ),
     );
   }
 
@@ -40,7 +42,7 @@ class NotificationLogic {
             .collection('water-model')
             .doc()
             .set(waterModel.toMap());
-        Fluttertoast.showToast(msg: "Addition Successful");
+        Fluttertoast.showToast(msg: 'Addition Successful');
       } catch (e) {
         Fluttertoast.showToast(msg: e.toString());
         print(e);
@@ -56,11 +58,11 @@ class NotificationLogic {
     String? payload,
     required DateTime dateTime,
   }) async {
-    print("yes 2");
+    print('yes 2');
     if (dateTime.isBefore(DateTime.now())) {
       dateTime = dateTime.add(const Duration(days: 1));
     }
-    print("yes 3");
+    print('yes 3');
     print(tz.TZDateTime.now(tz.local));
     print(
       tz.TZDateTime.from(dateTime, tz.local),

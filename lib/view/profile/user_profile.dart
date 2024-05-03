@@ -27,20 +27,20 @@ class _UserProfileState extends State<UserProfile> {
 
   List accountArr = [
     {
-      "image": "assets/icons/p_personal.png",
-      "name": "Personal Data",
-      "tag": "1"
+      'image': 'assets/icons/p_personal.png',
+      'name': 'Personal Data',
+      'tag': '1'
     },
   ];
 
   List otherArr = [
-    {"image": "assets/icons/p_contact.png", "name": "Contact Us", "tag": "5"},
+    {'image': 'assets/icons/p_contact.png', 'name': 'Contact Us', 'tag': '5'},
     {
-      "image": "assets/icons/p_privacy.png",
-      "name": "Privacy Policy",
-      "tag": "6"
+      'image': 'assets/icons/p_privacy.png',
+      'name': 'Privacy Policy',
+      'tag': '6'
     },
-    {"image": "assets/icons/p_setting.png", "name": "Setting", "tag": "7"},
+    {'image': 'assets/icons/p_setting.png', 'name': 'Setting', 'tag': '7'},
   ];
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -91,7 +91,7 @@ class _UserProfileState extends State<UserProfile> {
         await Future.delayed(Duration(seconds: 5)); // Retry after 5 seconds
       }
     }
-    print("Exceeded maximum retries. Unable to fetch data.");
+    print('Exceeded maximum retries. Unable to fetch data.');
   }
 
   @override
@@ -103,7 +103,7 @@ class _UserProfileState extends State<UserProfile> {
         centerTitle: true,
         elevation: 0,
         title: const Text(
-          "Profile",
+          'Profile',
           style: TextStyle(
               color: AppColors.blackColor,
               fontSize: 16,
@@ -121,7 +121,7 @@ class _UserProfileState extends State<UserProfile> {
                   color: AppColors.lightGrayColor,
                   borderRadius: BorderRadius.circular(10)),
               child: Image.asset(
-                "assets/icons/more_icon.png",
+                'assets/icons/more_icon.png',
                 width: 12,
                 height: 12,
                 fit: BoxFit.contain,
@@ -141,7 +141,7 @@ class _UserProfileState extends State<UserProfile> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Image.asset(
-                      "assets/images/user.png",
+                      'assets/images/user.png',
                       width: 50,
                       height: 50,
                       fit: BoxFit.cover,
@@ -155,7 +155,7 @@ class _UserProfileState extends State<UserProfile> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          firstName + " " + lastName,
+                          firstName + ' ' + lastName,
                           style: TextStyle(
                             color: AppColors.blackColor,
                             fontSize: 14,
@@ -163,7 +163,7 @@ class _UserProfileState extends State<UserProfile> {
                           ),
                         ),
                         Text(
-                          "To Be Fit",
+                          'To Be Fit',
                           style: TextStyle(
                             color: AppColors.grayColor,
                             fontSize: 12,
@@ -176,7 +176,7 @@ class _UserProfileState extends State<UserProfile> {
                     width: 70,
                     height: 25,
                     child: RoundButton(
-                      title: "Edit",
+                      title: 'Edit',
                       type: RoundButtonType.primaryBG,
                       onPressed: () {
                         Navigator.push(
@@ -197,8 +197,8 @@ class _UserProfileState extends State<UserProfile> {
                 children: [
                   Expanded(
                     child: TitleSubtitleCell(
-                      title: "${height}cm",
-                      subtitle: "Height",
+                      title: '${height}cm',
+                      subtitle: 'Height',
                     ),
                   ),
                   SizedBox(
@@ -206,8 +206,8 @@ class _UserProfileState extends State<UserProfile> {
                   ),
                   Expanded(
                     child: TitleSubtitleCell(
-                      title: "${weight}kg",
-                      subtitle: "Weight",
+                      title: '${weight}kg',
+                      subtitle: 'Weight',
                     ),
                   ),
                   SizedBox(
@@ -215,8 +215,8 @@ class _UserProfileState extends State<UserProfile> {
                   ),
                   Expanded(
                     child: TitleSubtitleCell(
-                      title: "${age}yo",
-                      subtitle: "Age",
+                      title: '${age}yo',
+                      subtitle: 'Age',
                     ),
                   ),
                 ],
@@ -237,7 +237,7 @@ class _UserProfileState extends State<UserProfile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Account",
+                      'Account',
                       style: TextStyle(
                         color: AppColors.blackColor,
                         fontSize: 16,
@@ -254,8 +254,8 @@ class _UserProfileState extends State<UserProfile> {
                       itemBuilder: (context, index) {
                         var iObj = accountArr[index] as Map? ?? {};
                         return SettingRow(
-                          icon: iObj["image"].toString(),
-                          title: iObj["name"].toString(),
+                          icon: iObj['image'].toString(),
+                          title: iObj['name'].toString(),
                           onPressed: () {
                             Navigator.push(
                               context,
@@ -285,7 +285,7 @@ class _UserProfileState extends State<UserProfile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Notification",
+                      'Notification',
                       style: TextStyle(
                         color: AppColors.blackColor,
                         fontSize: 16,
@@ -300,14 +300,14 @@ class _UserProfileState extends State<UserProfile> {
                       child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image.asset("assets/icons/p_notification.png",
+                            Image.asset('assets/icons/p_notification.png',
                                 height: 15, width: 15, fit: BoxFit.contain),
                             const SizedBox(
                               width: 15,
                             ),
                             Expanded(
                               child: Text(
-                                "Pop-up Notification",
+                                'Pop-up Notification',
                                 style: TextStyle(
                                   color: AppColors.blackColor,
                                   fontSize: 12,
@@ -391,7 +391,7 @@ class _UserProfileState extends State<UserProfile> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Other",
+                      'Other',
                       style: TextStyle(
                         color: AppColors.blackColor,
                         fontSize: 16,
@@ -409,8 +409,8 @@ class _UserProfileState extends State<UserProfile> {
                       itemBuilder: (context, index) {
                         var iObj = otherArr[index] as Map? ?? {};
                         return SettingRow(
-                          icon: iObj["image"].toString(),
-                          title: iObj["name"].toString(),
+                          icon: iObj['image'].toString(),
+                          title: iObj['name'].toString(),
                           onPressed: () {},
                         );
                       },
@@ -446,11 +446,11 @@ class _UserProfileState extends State<UserProfile> {
                             offset: Offset(0, 2))
                       ]),
                   child: Center(
-                      child: Text("Log Out",
+                      child: Text('Log Out',
                           style: TextStyle(
                             fontSize: 16,
                             color: AppColors.whiteColor,
-                            fontFamily: "Poppins",
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                           ))),
                 ),

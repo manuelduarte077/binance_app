@@ -8,7 +8,7 @@ import '../../common_widgets/round_textfield.dart';
 import 'complete_profile_screen.dart';
 
 class SignupScreen extends StatefulWidget {
-  static String routeName = "/SignupScreen";
+  static String routeName = '/SignupScreen';
 
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -23,7 +23,7 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _lastnameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  CollectionReference _users = FirebaseFirestore.instance.collection("users");
+  CollectionReference _users = FirebaseFirestore.instance.collection('users');
 
   final _formKey = GlobalKey<FormState>();
 
@@ -46,8 +46,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   SizedBox(
                     height: media.height * 0.06,
                   ),
-                  Text(
-                    "Hey there,",
+                  const Text(
+                    'Hey there,',
                     style: TextStyle(
                       color: AppColors.blackColor,
                       fontSize: 16,
@@ -56,12 +56,12 @@ class _SignupScreenState extends State<SignupScreen> {
                   SizedBox(
                     height: media.height * 0.01,
                   ),
-                  Text(
-                    "Create an Account",
+                  const Text(
+                    'Create an Account',
                     style: TextStyle(
                       color: AppColors.blackColor,
                       fontSize: 20,
-                      fontFamily: "Poppins",
+                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -70,8 +70,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   RoundTextField(
                     textEditingController: _firstnameController,
-                    hintText: "First Name",
-                    icon: "assets/icons/profile_icon.png",
+                    hintText: 'First Name',
+                    icon: 'assets/icons/profile_icon.png',
                     textInputType: TextInputType.name,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -88,8 +88,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   RoundTextField(
                     textEditingController: _lastnameController,
-                    hintText: "Last Name",
-                    icon: "assets/icons/profile_icon.png",
+                    hintText: 'Last Name',
+                    icon: 'assets/icons/profile_icon.png',
                     textInputType: TextInputType.name,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -106,8 +106,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   RoundTextField(
                     textEditingController: _emailController,
-                    hintText: "Email",
-                    icon: "assets/icons/message_icon.png",
+                    hintText: 'Email',
+                    icon: 'assets/icons/message_icon.png',
                     textInputType: TextInputType.emailAddress,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -128,8 +128,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   RoundTextField(
                     textEditingController: _passwordController,
-                    hintText: "Password",
-                    icon: "assets/icons/lock_icon.png",
+                    hintText: 'Password',
+                    icon: 'assets/icons/lock_icon.png',
                     textInputType: TextInputType.text,
                     isObscureText: true,
                     // onChanged: (value) {
@@ -150,7 +150,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             width: 20,
                             height: 20,
                             child: Image.asset(
-                              "assets/icons/hide_pwd_icon.png",
+                              'assets/icons/hide_pwd_icon.png',
                               width: 20,
                               height: 20,
                               fit: BoxFit.contain,
@@ -175,9 +175,9 @@ class _SignupScreenState extends State<SignupScreen> {
                                 : Icons.check_box_outline_blank_outlined,
                             color: AppColors.grayColor,
                           )),
-                      Expanded(
+                      const Expanded(
                         child: Text(
-                            "By continuing you accept our Privacy Policy and\nTerm of Use",
+                            'By continuing you accept our Privacy Policy and\nTerm of Use',
                             style: TextStyle(
                               color: AppColors.grayColor,
                               fontSize: 10,
@@ -189,7 +189,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     height: media.height * 0.05,
                   ),
                   RoundGradientButton(
-                    title: "Next >",
+                    title: 'Next >',
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         if (isCheck) {
@@ -228,7 +228,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         height: 1,
                         color: AppColors.grayColor.withOpacity(0.5),
                       )),
-                      Text("  Or  ",
+                      const Text('  Or  ',
                           style: TextStyle(
                               color: AppColors.grayColor,
                               fontSize: 12,
@@ -261,13 +261,13 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
                           child: Image.asset(
-                            "assets/icons/google_icon.png",
+                            'assets/icons/google_icon.png',
                             width: 20,
                             height: 20,
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       GestureDetector(
@@ -284,7 +284,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             ),
                           ),
                           child: Image.asset(
-                            "assets/icons/facebook_icon.png",
+                            'assets/icons/facebook_icon.png',
                             width: 20,
                             height: 20,
                           ),
@@ -301,17 +301,17 @@ class _SignupScreenState extends State<SignupScreen> {
                       },
                       child: RichText(
                         textAlign: TextAlign.center,
-                        text: TextSpan(
+                        text: const TextSpan(
                             style: TextStyle(
                                 color: AppColors.blackColor,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w400),
                             children: [
-                              const TextSpan(
-                                text: "Already have an account? ",
+                              TextSpan(
+                                text: 'Already have an account? ',
                               ),
                               TextSpan(
-                                  text: "Login",
+                                  text: 'Login',
                                   style: TextStyle(
                                       color: AppColors.secondaryColor1,
                                       fontSize: 14,

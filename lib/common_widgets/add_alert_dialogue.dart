@@ -25,7 +25,7 @@ addAlertDialogue(
           .collection('reminder')
           .doc()
           .set(reminderModel.toMap());
-      Fluttertoast.showToast(msg: "Reminder Added");
+      Fluttertoast.showToast(msg: 'Reminder Added');
     } catch (e) {
       print(e);
       Fluttertoast.showToast(msg: e.toString());
@@ -33,87 +33,90 @@ addAlertDialogue(
   }
 
   return showDialog(
-      context: context,
-      builder: (context) {
-        return StatefulBuilder(
-          builder:
-              (BuildContext context, void Function(void Function()) setState) {
-            return AlertDialog(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(25)),
-              ),
-              title: Text("Add reminder"),
-              content: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    Text("Select a Time for reminder"),
-                    SizedBox(height: 20),
-                    Visibility(
-                      visible: errorVisible,
-                      child: Text(
-                        "Please select reminder after wake and before sleep time",
-                        style: TextStyle(
-                          color: Colors.red,
-                        ),
-                      ),
+    context: context,
+    builder: (context) {
+      return StatefulBuilder(
+        builder:
+            (BuildContext context, void Function(void Function()) setState) {
+          return AlertDialog(
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(25)),
+            ),
+            title: const Text('Add reminder'),
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const Text('Select a Time for reminder'),
+                  const SizedBox(height: 20),
+                  Visibility(
+                    visible: errorVisible,
+                    child: const Text(
+                      'Please select reminder after wake and before sleep time',
+                      style: TextStyle(color: Colors.red),
                     ),
-                    SizedBox(height: 20),
-                    MaterialButton(
-                      onPressed: () async {
-                        TimeOfDay? newTime = await showTimePicker(
-                            context: context, initialTime: TimeOfDay.now());
+                  ),
+                  const SizedBox(height: 20),
+                  MaterialButton(
+                    onPressed: () async {
+                      TimeOfDay? newTime = await showTimePicker(
+                          context: context, initialTime: TimeOfDay.now());
 
-                        if (newTime == null) return;
-                        setState(() {
-                          time = newTime;
-                        });
-                      },
-                      child: Row(
-                        children: [
-                          FaIcon(
-                            FontAwesomeIcons.clock,
+                      if (newTime == null) return;
+                      setState(() {
+                        time = newTime;
+                      });
+                    },
+                    child: Row(
+                      children: [
+                        const FaIcon(
+                          FontAwesomeIcons.clock,
+                          color: AppColors.primaryColor1,
+                          size: 40,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          time.format(context).toString(),
+                          style: const TextStyle(
                             color: AppColors.primaryColor1,
-                            size: 40,
+                            fontSize: 30,
                           ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            time.format(context).toString(),
-                            style: TextStyle(
-                                color: AppColors.primaryColor1, fontSize: 30),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: Text("Cancel")),
-                TextButton(
-                    onPressed: () {
-                      if (TimeConverter(time).isBefore(sleepTime) ||
-                          TimeConverter(time).isAfter(wakeTime)) {
-                        add(uid, time);
-                        Navigator.of(context).pop();
-                        setState(() {
-                          errorVisible = false;
-                        });
-                      } else {
-                        setState(() {
-                          errorVisible = true;
-                        });
-                      }
-                    },
-                    child: Text("Add")),
-              ],
-            );
-          },
-        );
-      });
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Cancel'),
+              ),
+              TextButton(
+                onPressed: () {
+                  if (TimeConverter(time).isBefore(sleepTime) ||
+                      TimeConverter(time).isAfter(wakeTime)) {
+                    add(uid, time);
+                    Navigator.of(context).pop();
+                    setState(() {
+                      errorVisible = false;
+                    });
+                  } else {
+                    setState(() {
+                      errorVisible = true;
+                    });
+                  }
+                },
+                child: const Text('Add'),
+              ),
+            ],
+          );
+        },
+      );
+    },
+  );
 }

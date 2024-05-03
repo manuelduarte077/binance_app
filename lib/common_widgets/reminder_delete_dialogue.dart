@@ -7,12 +7,12 @@ reminderDeleteAlertDialogue(BuildContext context, String id, String uid) {
   return showDialog(
       builder: (context) {
         return AlertDialog(
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(25)),
           ),
-          title: Text("Delete Reminder"),
-          content: Text(
-            "Are you sure you want to delete?",
+          title: const Text('Delete Reminder'),
+          content: const Text(
+            'Are you sure you want to delete?',
           ),
           actions: [
             TextButton(
@@ -24,15 +24,15 @@ reminderDeleteAlertDialogue(BuildContext context, String id, String uid) {
                       .collection('reminder')
                       .doc(id)
                       .delete();
-                  Fluttertoast.showToast(msg: "Reminder Deleted");
+                  Fluttertoast.showToast(msg: 'Reminder Deleted');
                 } catch (e) {
                   print(e);
                   Fluttertoast.showToast(msg: e.toString());
                 }
                 Navigator.of(context).pop();
               },
-              child: Text(
-                "Delete",
+              child: const Text(
+                'Delete',
                 style: TextStyle(
                   color: Colors.red,
                 ),
@@ -42,7 +42,7 @@ reminderDeleteAlertDialogue(BuildContext context, String id, String uid) {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text("Cancel"),
+              child: const Text('Cancel'),
             ),
           ],
         );

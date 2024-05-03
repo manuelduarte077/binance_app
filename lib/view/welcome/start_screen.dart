@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../common_widgets/round_gradient_button.dart';
 
 class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

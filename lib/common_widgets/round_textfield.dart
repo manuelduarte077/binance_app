@@ -5,7 +5,7 @@ import '../utils/app_colors.dart';
 class RoundTextField extends StatelessWidget {
   final TextEditingController? textEditingController;
   final FormFieldValidator? validator;
-final ValueChanged<String>? onChanged;
+  final ValueChanged<String>? onChanged;
   final String hintText;
   final String icon;
   final TextInputType textInputType;
@@ -16,8 +16,7 @@ final ValueChanged<String>? onChanged;
       {Key? key,
       this.textEditingController,
       this.validator,
-          this.onChanged,
-
+      this.onChanged,
       required this.hintText,
       required this.icon,
       required this.textInputType,

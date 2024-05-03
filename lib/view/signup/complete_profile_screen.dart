@@ -8,7 +8,7 @@ import '../../common_widgets/round_gradient_button.dart';
 import '../../common_widgets/round_textfield.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
-  static String routeName = "/CompleteProfileScreen";
+  static String routeName = '/CompleteProfileScreen';
 
   final String firstName;
   final String lastName;
@@ -30,7 +30,7 @@ class CompleteProfileScreen extends StatefulWidget {
 class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final CollectionReference _users =
-      FirebaseFirestore.instance.collection("users");
+      FirebaseFirestore.instance.collection('users');
 
   late String firstName;
   late String lastName;
@@ -60,7 +60,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
       setState(() {
         _selectedDate = picked;
         _dateOfBirthController.text =
-            "${picked.day}/${picked.month}/${picked.year}";
+            '${picked.day}/${picked.month}/${picked.year}';
       });
     }
   }
@@ -85,10 +85,10 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
         'weight': _weightController.text,
         'height': _heightController.text,
         'age': _ageController.text,
-        'stepsTarget': "4000",
-        'waterTarget': "2000",
-        'sleeptime': "12:00 AM",
-        'waketime': "8:00 AM",
+        'stepsTarget': '4000',
+        'waterTarget': '2000',
+        'sleeptime': '12:00 AM',
+        'waketime': '8:00 AM',
 
         // Add other fields as needed
       });
@@ -144,29 +144,29 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
               key: _formKey,
               child: Column(
                 children: [
-                  Image.asset("assets/images/complete_profile.png",
+                  Image.asset('assets/images/complete_profile.png',
                       width: media.width),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  Text(
-                    "Let’s complete your profile",
+                  const Text(
+                    'Let’s complete your profile',
                     style: TextStyle(
                         color: AppColors.blackColor,
                         fontSize: 20,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(height: 5),
-                  Text(
-                    "It will help us to know more about you!",
+                  const SizedBox(height: 5),
+                  const Text(
+                    'It will help us to know more about you!',
                     style: TextStyle(
                       color: AppColors.grayColor,
                       fontSize: 12,
-                      fontFamily: "Poppins",
+                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(height: 25),
+                  const SizedBox(height: 25),
                   // Gender Dropdown
                   Container(
                     decoration: BoxDecoration(
@@ -185,7 +185,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 15),
                               child: Image.asset(
-                                "assets/icons/gender_icon.png",
+                                'assets/icons/gender_icon.png',
                                 width: 20,
                                 height: 20,
                                 fit: BoxFit.contain,
@@ -195,8 +195,8 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                             Expanded(
                               child: DropdownButtonHideUnderline(
                                 child: DropdownButton<String>(
-                                  hint: Text("Choose Gender",
-                                      style: const TextStyle(
+                                  hint: const Text('Choose Gender',
+                                      style: TextStyle(
                                           color: AppColors.grayColor,
                                           fontSize: 12)),
                                   value: _selectedGender,
@@ -206,7 +206,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                                       _selectedGender = newValue;
                                     });
                                   },
-                                  items: ["Male", "Female"].map((String value) {
+                                  items: ['Male', 'Female'].map((String value) {
                                     return DropdownMenuItem<String>(
                                       value: value,
                                       child: Text(
@@ -221,13 +221,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                                 ),
                               ),
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                           ],
                         ),
                         if (buttonClicked &&
                             (_selectedGender == null ||
                                 _selectedGender!.isEmpty))
-                          Column(
+                          const Column(
                             children: [
                               Divider(
                                 color: Color(0xFFB01B13),
@@ -236,8 +236,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                               Align(
                                 alignment: Alignment.centerLeft,
                                 child: Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 15, top: 4),
+                                  padding: EdgeInsets.only(left: 15, top: 4),
                                   child: Text(
                                     'Please choose a gender',
                                     style: TextStyle(
@@ -253,19 +252,16 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                     ),
                   ),
 
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   // Date of Birth
                   GestureDetector(
                     onTap: () => _selectDate(context),
                     child: AbsorbPointer(
                       child: RoundTextField(
                         textEditingController: _dateOfBirthController,
-                        hintText: "Date of Birth",
-                        icon: "assets/icons/calendar_icon.png",
+                        hintText: 'Date of Birth',
+                        icon: 'assets/icons/calendar_icon.png',
                         textInputType: TextInputType.text,
-                        // onChanged: (value) {
-                        //   _formKey.currentState!.validate();
-                        // },
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Please enter your date of birth';
@@ -275,13 +271,13 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
 
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   RoundTextField(
                     textEditingController: _weightController,
-                    hintText: "Your Weight",
-                    icon: "assets/icons/weight_icon.png",
+                    hintText: 'Your Weight',
+                    icon: 'assets/icons/weight_icon.png',
                     textInputType: TextInputType.text,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -293,11 +289,11 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   RoundTextField(
                     textEditingController: _heightController,
-                    hintText: "Your Height",
-                    icon: "assets/icons/swap_icon.png",
+                    hintText: 'Your Height',
+                    icon: 'assets/icons/swap_icon.png',
                     textInputType: TextInputType.text,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -309,11 +305,11 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   RoundTextField(
                     textEditingController: _ageController,
-                    hintText: "Your Age",
-                    icon: "assets/icons/profile_icon.png",
+                    hintText: 'Your Age',
+                    icon: 'assets/icons/profile_icon.png',
                     textInputType: TextInputType.text,
                     // onChanged: (value) {
                     //   _formKey.currentState!.validate();
@@ -325,9 +321,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   RoundGradientButton(
-                    title: "Register",
+                    title: 'Register',
                     onPressed: () {
                       setState(() {
                         buttonClicked = true;

@@ -117,7 +117,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  
                   Text(
                     "Update Your Profile",
                     style: TextStyle(

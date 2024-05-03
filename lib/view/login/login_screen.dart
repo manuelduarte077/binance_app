@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:health_fitness/utils/app_colors.dart';
 import 'package:health_fitness/view/dashboard/dashboard_screen.dart';
-import 'package:health_fitness/view/home/home_screen.dart';
 import 'package:health_fitness/view/login/forgot_password.dart';
 import 'package:health_fitness/view/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +10,7 @@ import '../../common_widgets/round_gradient_button.dart';
 import '../../common_widgets/round_textfield.dart';
 
 class LoginScreen extends StatefulWidget {
-  static String routeName = "/LoginScreen";
+  static String routeName = '/LoginScreen';
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -23,7 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-bool _isObscure = true;
+  bool _isObscure = true;
   final _formKey = GlobalKey<FormState>();
 
   Future<User?> _signIn(
@@ -39,7 +38,7 @@ bool _isObscure = true;
       return user;
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text("Login failed. Please check your email and password."),
+        content: Text('Login failed. Please check your email and password.'),
       ));
 
       return null;
@@ -59,6 +58,7 @@ bool _isObscure = true;
       await Permission.activityRecognition.request();
     }
   }
+
   Future<void> requestPermissions2() async {
     if (await Permission.scheduleExactAlarm.isDenied) {
       // Request permission
@@ -92,7 +92,7 @@ bool _isObscure = true;
                           height: media.width * 0.03,
                         ),
                         const Text(
-                          "Hey there,",
+                          'Hey there,',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: AppColors.blackColor,
@@ -102,12 +102,12 @@ bool _isObscure = true;
                         ),
                         SizedBox(height: media.width * 0.01),
                         const Text(
-                          "Welcome Back",
+                          'Welcome Back',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: AppColors.blackColor,
                             fontSize: 20,
-                            fontFamily: "Poppins",
+                            fontFamily: 'Poppins',
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -117,8 +117,8 @@ bool _isObscure = true;
                   SizedBox(height: media.width * 0.1),
                   RoundTextField(
                     textEditingController: _emailController,
-                    hintText: "Email",
-                    icon: "assets/icons/message_icon.png",
+                    hintText: 'Email',
+                    icon: 'assets/icons/message_icon.png',
                     textInputType: TextInputType.emailAddress,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -134,8 +134,8 @@ bool _isObscure = true;
                   SizedBox(height: media.width * 0.05),
                   RoundTextField(
                     textEditingController: _passwordController,
-                    hintText: "Password",
-                    icon: "assets/icons/lock_icon.png",
+                    hintText: 'Password',
+                    icon: 'assets/icons/lock_icon.png',
                     textInputType: TextInputType.text,
                     isObscureText: _isObscure,
                     validator: (value) {
@@ -157,7 +157,9 @@ bool _isObscure = true;
                             width: 20,
                             height: 20,
                             child: Image.asset(
-                             _isObscure ? "assets/icons/show_pwd_icon.png": "assets/icons/hide_pwd_icon.png",
+                              _isObscure
+                                  ? 'assets/icons/show_pwd_icon.png'
+                                  : 'assets/icons/hide_pwd_icon.png',
                               width: 20,
                               height: 20,
                               fit: BoxFit.contain,
@@ -175,7 +177,7 @@ bool _isObscure = true;
                               builder: (context) => ForgotPasswordScreen()),
                         );
                       },
-                      child: const Text("Forgot your password?",
+                      child: const Text('Forgot your password?',
                           style: TextStyle(
                             color: AppColors.secondaryColor1,
                             fontSize: 14,
@@ -185,7 +187,7 @@ bool _isObscure = true;
                   ),
                   SizedBox(height: media.width * 0.1),
                   RoundGradientButton(
-                    title: "Login",
+                    title: 'Login',
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         _signIn(context, _emailController.text,
@@ -202,7 +204,7 @@ bool _isObscure = true;
                         height: 1,
                         color: AppColors.grayColor.withOpacity(0.5),
                       )),
-                      Text("  Or  ",
+                      Text('  Or  ',
                           style: TextStyle(
                               color: AppColors.grayColor,
                               fontSize: 12,
@@ -235,7 +237,7 @@ bool _isObscure = true;
                             ),
                           ),
                           child: Image.asset(
-                            "assets/icons/google_icon.png",
+                            'assets/icons/google_icon.png',
                             width: 20,
                             height: 20,
                           ),
@@ -245,9 +247,7 @@ bool _isObscure = true;
                         width: 30,
                       ),
                       GestureDetector(
-                        onTap: () {
-                          
-                        },
+                        onTap: () {},
                         child: Container(
                           width: 50,
                           height: 50,
@@ -260,7 +260,7 @@ bool _isObscure = true;
                             ),
                           ),
                           child: Image.asset(
-                            "assets/icons/facebook_icon.png",
+                            'assets/icons/facebook_icon.png',
                             width: 20,
                             height: 20,
                           ),
@@ -284,10 +284,10 @@ bool _isObscure = true;
                                 fontWeight: FontWeight.w400),
                             children: [
                               const TextSpan(
-                                text: "Don’t have an account yet? ",
+                                text: 'Don’t have an account yet? ',
                               ),
                               TextSpan(
-                                  text: "Register",
+                                  text: 'Register',
                                   style: TextStyle(
                                       color: AppColors.secondaryColor1,
                                       fontSize: 14,
