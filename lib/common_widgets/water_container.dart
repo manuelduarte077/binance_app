@@ -6,7 +6,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:health_fitness/model/water_model.dart';
 
-
 class WaterContainer extends StatefulWidget {
   final int weight;
   final int intakeGoal;

@@ -9,7 +9,11 @@ class RoundButton extends StatelessWidget {
   final RoundButtonType type;
   final Function() onPressed;
 
-  const RoundButton({Key? key, required this.title, required this.onPressed, this.type = RoundButtonType.secondaryBG})
+  const RoundButton(
+      {Key? key,
+      required this.title,
+      required this.onPressed,
+      this.type = RoundButtonType.secondaryBG})
       : super(key: key);
 
   @override
@@ -17,7 +21,9 @@ class RoundButton extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: type == RoundButtonType.secondaryBG?AppColors.secondaryG:AppColors.primaryG,
+              colors: type == RoundButtonType.secondaryBG
+                  ? AppColors.secondaryG
+                  : AppColors.primaryG,
               begin: Alignment.centerLeft,
               end: Alignment.centerRight),
           borderRadius: BorderRadius.circular(25),
