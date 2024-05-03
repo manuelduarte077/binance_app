@@ -20,15 +20,15 @@ class RadialPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint bgline = Paint()
-      ..color = bgColor!
+      ..color = bgColor ?? Colors.grey
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
-      ..strokeWidth = widget!;
+      ..strokeWidth = widget ?? 10;
     Paint completeLine = Paint()
-      ..color = lineColor!
+      ..color = lineColor ?? Colors.blue
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke
-      ..strokeWidth = widget!;
+      ..strokeWidth = widget ?? 10;
 
     // Calculate the progress (percentage of steps completed)
     double progress = (stepsCount! / totalTarget!)

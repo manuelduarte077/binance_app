@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:health_fitness/utils/app_colors.dart';
 import 'package:health_fitness/utils/constants.dart';
-import 'package:health_fitness/view/activity_tracker/reminder_scheduler.dart';
-import 'package:health_fitness/view/activity_tracker/widgets/today_target_cell.dart';
+import 'package:health_fitness/features/activity_tracker/reminder_scheduler.dart';
+import 'package:health_fitness/features/activity_tracker/widgets/today_target_cell.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/dashboard/dashboard_screen.dart';
-import 'package:health_fitness/view/login/login_screen.dart';
+import 'package:health_fitness/features/dashboard/dashboard_screen.dart';
+import 'package:health_fitness/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../common_widgets/round_gradient_button.dart';

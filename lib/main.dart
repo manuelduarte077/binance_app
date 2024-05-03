@@ -3,9 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:health_fitness/firebase_options.dart';
 import 'package:health_fitness/routes.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/dashboard/dashboard_screen.dart';
+import 'package:health_fitness/features/dashboard/dashboard_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:health_fitness/view/welcome/start_screen.dart';
+import 'package:health_fitness/features/welcome/start_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:health_fitness/model/water_model.dart';
-import 'package:health_fitness/view/home/home_screen.dart';
+import 'package:health_fitness/features/home/home_screen.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as tz;

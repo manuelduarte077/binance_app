@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/profile/user_profile.dart';
+import 'package:health_fitness/features/profile/user_profile.dart';
 import 'package:flutter/material.dart';
 
 import '../home/home_screen.dart';

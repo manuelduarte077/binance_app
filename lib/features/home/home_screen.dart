@@ -7,7 +7,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:health_fitness/model/water_model.dart';
 import 'package:health_fitness/radial_painter.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/activity_tracker/activity_tracker_screen.dart';
+import 'package:health_fitness/features/activity_tracker/activity_tracker_screen.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

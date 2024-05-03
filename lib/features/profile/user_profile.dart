@@ -4,12 +4,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:health_fitness/utils/app_colors.dart';
 import 'package:health_fitness/utils/auth_manager.dart';
 import 'package:health_fitness/utils/auth_provider.dart';
-import 'package:health_fitness/view/dashboard/dashboard_screen.dart';
-import 'package:health_fitness/view/login/login_screen.dart';
-import 'package:health_fitness/view/profile/edit_profile.dart';
-import 'package:health_fitness/view/profile/personal_data.dart';
-import 'package:health_fitness/view/profile/widgets/setting_row.dart';
-import 'package:health_fitness/view/profile/widgets/title_subtitle_cell.dart';
+import 'package:health_fitness/features/dashboard/dashboard_screen.dart';
+import 'package:health_fitness/features/login/login_screen.dart';
+import 'package:health_fitness/features/profile/edit_profile.dart';
+import 'package:health_fitness/features/profile/personal_data.dart';
+import 'package:health_fitness/features/profile/widgets/setting_row.dart';
+import 'package:health_fitness/features/profile/widgets/title_subtitle_cell.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

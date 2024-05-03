@@ -29,13 +29,13 @@ class SettingRow extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   color: AppColors.blackColor,
                   fontSize: 12,
                 ),
               ),
             ),
-            Image.asset("assets/icons/p_next.png",
+            Image.asset('assets/icons/p_next.png',
                 height: 12, width: 12, fit: BoxFit.contain)
           ],
         ),

@@ -8,7 +8,7 @@ import 'package:health_fitness/common_widgets/reminder_delete_dialogue.dart';
 import 'package:health_fitness/common_widgets/switch.dart';
 import 'package:health_fitness/services/notification_logic.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/activity_tracker/activity_tracker_screen.dart';
+import 'package:health_fitness/features/activity_tracker/activity_tracker_screen.dart';
 import 'package:intl/intl.dart';
 
 class ReminderScheduler extends StatefulWidget {

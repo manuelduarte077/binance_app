@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/profile/change_password.dart';
-import 'package:health_fitness/view/profile/edit_profile.dart';
+import 'package:health_fitness/features/profile/change_password.dart';
+import 'package:health_fitness/features/profile/edit_profile.dart';
 
 class PersonalDataScreen extends StatefulWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:health_fitness/utils/app_colors.dart';
-import 'package:health_fitness/view/dashboard/dashboard_screen.dart';
-import 'package:health_fitness/view/login/forgot_password.dart';
-import 'package:health_fitness/view/signup/signup_screen.dart';
+import 'package:health_fitness/features/dashboard/dashboard_screen.dart';
+import 'package:health_fitness/features/login/forgot_password.dart';
+import 'package:health_fitness/features/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
